@@ -60,7 +60,7 @@ header h1 {
 .post-container .post-title {
 	width: 90%;
 	display: block;
-	margin: 1em auto;
+	margin: 1em auto .5em;
 }
 
 .post-container .post-title a {
@@ -82,5 +82,5 @@ header h1 {
 	text-align: justify;
 	color: #555;
 	font-size: .95em;
-	margin: .5em auto 1.5em;
+	margin: .5em auto 2em;
 }
