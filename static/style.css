@@ -112,12 +112,25 @@ UPLOAD
 	width: 95%;
 	display: block;
 	font-size: 1em;
-	background: none;
-	border: none;
-	margin: .2em auto;
+	background: #ddd;
+	border: #bbb;
+	margin: .5em auto;
+	outline: none;
 }
 
 #text {
 	height: 150px;
 	resize: none;
+}
+
+.standard-button {
+	width: 50%;
+	display: block;
+	margin: 0 auto;
+	background: #555;
+	color: #eee;
+}
+
+.standard-button:hover {
+	background: #333;
 }
