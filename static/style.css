@@ -44,6 +44,9 @@ header h1 {
 	margin: 1em auto;
 	width: 100%;
 	border: 1px solid #bbb;
+	background: #fff;
+	box-sizing: border-box;
+	padding: .5em 1em;
 }
 
 .post-container .post-image {
