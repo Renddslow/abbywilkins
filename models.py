@@ -34,6 +34,13 @@ class Comments(BaseModel):
 	date_created = DateTimeField(default=datetime.datetime.now())
 
 
+class Likes(BaseModel):
+	like_id = PrimaryKeyField()
+	post_id = IntegerField(index=True)
+	user_id = IntegerField(index=True)
+	date_created = DateTimeField(default=datetime.datetime.now())
+
+
 def initialize():
 	DATABASE.connect()
 	DATABASE.create_tables([Posts,Users,Comments], safe=True)

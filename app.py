@@ -2,6 +2,7 @@ from flask import (Flask, g, render_template,
 					jsonify, request)
 
 import models
+import forms
 
 application = Flask(__name__)
 
@@ -18,14 +19,6 @@ def after_request(response):
 
 @application.route("/")
 def home():
-	return render_template("home.html")
-
-@application.route("/upload", methods=['GET','POST'])
-def upload():
-	return render_template("upload.html")
-
-@application.route("/posts")
-def get_posts():
 	page = int(request.args.get("page"))
 	limit = int(request.args.get("limit"))
 	posts = (models.Posts.select()
@@ -34,13 +27,20 @@ def get_posts():
 	post_list = []
 	for post in posts:
 		post_dict = {
+			"id": post.post_id,
 			"title": post.post_title,
 			"text": post.post_text,
 			"image": post.post_image_uri,
 			"date_created": post.date_created
 		}
 		post_list.append(post_dict)
-	return jsonify(post_list)
+	return render_template("home.html", posts=post_list)
+
+@application.route("/upload", methods=['GET','POST'])
+def upload():
+	form = forms.Upload()
+	return render_template("upload.html", form=form)
+
 
 if __name__ == "__main__":
 	application.run(host='0.0.0.0')

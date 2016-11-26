@@ -1,0 +1,21 @@
+<!doctype>
+<html>
+	<head>
+	</head>
+	<body>
+		<div id="wrapper">
+			<header>
+				<h1><a href="/">Abby Wilkins</a></h1>
+			</header>
+			<div class="">
+				<form action="" method="POST" enctype="multipart/form-data">
+					{{ form.hidden_tag() }}
+					{{ form.image() }}
+					{{ form.title(placeholder=form.title.label.text) }}
+					{{ form.text(placeholder=form.text.label.text) }}
+					<button type="submit" class="standard-button">Do the things!</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
