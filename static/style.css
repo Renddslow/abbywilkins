@@ -92,6 +92,11 @@ UPLOAD
 	margin-top: 55px;
 	display: block;
 	width: 100%;
+	min-height: 100vh;
+}
+
+#image {
+	display: none;
 }
 
 .upload-image-container {
@@ -100,4 +105,19 @@ UPLOAD
 	display: block;
 	height: 0;
 	background: #999;
+}
+
+#title,
+#text {
+	width: 95%;
+	display: block;
+	font-size: 1em;
+	background: none;
+	border: none;
+	margin: .2em auto;
+}
+
+#text {
+	height: 150px;
+	resize: none;
 }
