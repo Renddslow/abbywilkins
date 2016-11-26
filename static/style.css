@@ -57,22 +57,28 @@ header h1 {
 	background-position: center 15px;
 }
 
+.post-container .post-title {
+	width: 90%;
+	display: block;
+	margin: 1em auto;
+}
+
 .post-container .post-title a {
 	transition: color .3s ease-out;
 	-webkit-transition: color .3s ease-out;
 	-moz-transition: color .3s ease-out;
 	-ms-transition: color .3s ease-out;
-	padding: .5rem 1rem;
 }
 
 .post-container .post-title a:hover {
 	color: #111;
 	text-decoration: underline;
+	cursor: pointer;
 }
 
 .post-container .post-text {
 	display: block;
-	width: 95%;
+	width: 90%;
 	text-align: justify;
 	color: #555;
 	font-size: .95em;
