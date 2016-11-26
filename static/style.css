@@ -113,7 +113,7 @@ UPLOAD
 	display: block;
 	font-size: 1em;
 	background: #ddd;
-	border: #bbb;
+	border: 1px solid #bbb;
 	margin: .5em auto;
 	outline: none;
 }
@@ -129,6 +129,9 @@ UPLOAD
 	margin: 0 auto;
 	background: #555;
 	color: #eee;
+	border: none;
+	padding: .2em 0;
+	font-size: 1em;
 }
 
 .standard-button:hover {
