@@ -15,6 +15,7 @@
 	margin: 0 auto;
 	overflow: hidden;
 	position: relative;
+	background: #ddd;
 }
 
 header {
@@ -36,4 +37,40 @@ header h1 {
 	display: block;
 	margin: 0 auto;
 	overflow: hidden;
+}
+
+.post-container {
+	display: block;
+	margin: 1em auto;
+	width: 100%;
+	border: 1px solid #bbb;
+}
+
+.post-container .post-image {
+	background-image: url('https://scontent-dft4-1.cdninstagram.com/t51.2885-15/e35/14726402_670367903…_4928013404909600768_n.jpg?ig_cache_key=MTM3OTMyMTIxNTQwNzEwOTk0Mg%3D%3D.2');
+	display: block;
+	width: 100%;
+	padding-bottom: 100%;
+	background-size: cover;
+	background-position: center 15px;
+}
+
+.post-container .post-title a {
+	transition: color .3s ease-out;
+	-webkit-transition: color .3s ease-out;
+	-moz-transition: color .3s ease-out;
+	-ms-transition: color .3s ease-out;
+}
+
+.post-container .post-title a:hover {
+	color: #111;
+	text-decoration: underline;
+}
+
+.post-container .post-text {
+	display: block;
+	width: 100%;
+	text-align: justify;
+	color: #555;
+	font-size: .95em;
 }

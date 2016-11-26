@@ -22,7 +22,7 @@
 			<div class="post-column">
 				{% for post in posts %}
 				<div class="post-container">
-					<div class="post-image" style="background-image: url('{{ post['image'] }}')"></div>
+					<div class="post-image" style="background-image: url('{{ post['image'] }}');"></div>
 					<div class="post-likes"></div>
 					<h2 class="post-title"><a href="{{ post['id'] }}" class="post-title-link">{{ post['title'] }}</a></h2>
 					<span class="post-text">{{ post['text'] }}</span>
