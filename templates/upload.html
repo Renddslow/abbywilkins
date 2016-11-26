@@ -25,6 +25,7 @@
 			</div>
 		</div>
 		<script>
+		$(function() {
 			$("#image").change(function(){
 				var reader = new FileReader();
 				reader.onload = function(e) {
@@ -32,6 +33,7 @@
 				};
 				reader.readAsDataURL(this.files[0])
 			});
+		});
 		</script>
 	</body>
 </html>
