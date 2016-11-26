@@ -1,10 +1,11 @@
 import datetime
 
+from flask_login import UserMixin
+
 from peewee import *
 
 DATABASE = MySQLDatabase("abby",host="localhost",
 							user="brink",passwd="littleredunicorns")
-
 
 class BaseModel(Model):
 	class Meta:
@@ -19,7 +20,7 @@ class Posts(BaseModel):
 	date_created = DateTimeField(default=datetime.datetime.now())
 
 
-class Users(BaseModel):
+class Users(BaseModel, UserMixin):
 	username = CharField(unique=True, index=True)
 	password = CharField()
 	first_name = CharField()
