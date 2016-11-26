@@ -53,6 +53,18 @@ def home(page=1):
 @application.route("/upload", methods=['GET','POST'])
 def upload():
 	form = forms.Upload()
+	if form.validate_on_submit():
+		filename = secure_filename(form.image.data.filename)
+		relative_uri = "/home/ryan/abby/static/uploads/{}".format(filename)
+		db_uri = "/static/uploads/{}".format(filename)
+		form.image.data.save(relative_uri)
+		title = form.title.data
+		text = form.text.data
+		models.Posts.create(
+			post_title = title,
+			post_text = text,
+			post_image_uri = image
+		)
 	return render_template("upload.html", form=form)
 
 
