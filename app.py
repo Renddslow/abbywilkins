@@ -18,9 +18,9 @@ def after_request(response):
 	return response
 
 @application.route("/")
-def home():
-	page = int(request.args.get("page"))
-	limit = int(request.args.get("limit"))
+@application.route("/<int:page>")
+def home(page=1):
+	limit = 20
 	posts = (models.Posts.select()
 					.order_by(models.Posts.date_created)
 					.paginate(page, limit))
