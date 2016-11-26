@@ -1,11 +1,25 @@
 from flask import (Flask, g, render_template,
 					jsonify, request)
+from flask_login import (LoginManager, UserMixin, login_required, login_user,
+						logout_user, current_user)
 
 import models
 import forms
 
 application = Flask(__name__)
+application.secret_key = "THIS_IS_A_TEST_KEY_FOR_GITHUB"
 
+login_manager = LoginManager()
+login_manager.init_app(application)
+login_manager.login_view = 'login'
+
+@login_manager.user_loader
+def load_user(user_id):
+	try:
+		models.Users.get(user_id)
+		return models.Users
+	except models.DoesNotExist:
+		return None
 
 @application.before_request
 def before_request():
